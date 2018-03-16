@@ -10,10 +10,6 @@ extern Plugin *plugin;
 // module widgets
 ////////////////////
 
-struct PolivoksLeadWidget : ModuleWidget {
-  PolivoksLeadWidget( );
-};
-
-struct PolivoksSawWidget : ModuleWidget {
-  PolivoksSawWidget( );
-};
+extern Model *modelPolivoksLead;
+extern Model *modelPolivoksSaw;
+extern Model *modelPolivoksSquare;

@@ -1,5 +1,5 @@
-SLUG = DrumKit
-VERSION = 0.5.2
+SLUG = Instruments
+VERSION = 0.6.0
 
 # FLAGS will be passed to both the C and C++ compiler
 FLAGS +=
@@ -10,12 +10,19 @@ CXXFLAGS +=
 # Static libraries are fine.
 LDFLAGS +=
 
+# Controllers
+CONTROLLERS += $(wildcard src/controller/*.cpp)
+
+# Views
+VIEWS += $(wildcard src/view/*.cpp)
+
 # Add .cpp and .c files to the build
-SOURCES = $(wildcard src/*.cpp) $(wildcard deps/SynthDevKit/src/*.cpp)
+SOURCES = $(wildcard src/*.cpp) $(CONTROLLERS) $(VIEWS)
 
 # Add files to the ZIP package when running `make dist`
 # The compiled plugin is automatically added.
 DISTRIBUTABLES += $(wildcard LICENSE*) res
 
 # Must include the VCV plugin Makefile framework
-include ../../plugin.mk
+RACK_DIR ?= ../..
+include $(RACK_DIR)/plugin.mk

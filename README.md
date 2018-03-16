@@ -16,3 +16,7 @@ A lead waveform, ranging from C-3 to B-5.
 ### Saw
 
 A saw waveform, ranging from C-3 to B-5.
+
+### Square
+
+A square waveform, ranging from C-1 to B-3.

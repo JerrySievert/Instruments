@@ -1,7 +1,7 @@
 #include "PolivoksSaw.hpp"
 #include "../samples/saw.h"
 
-static struct PolivoksSawContainer sawsamples[ 36 ] = {
+static struct PolivoksSawContainer sawsamples[ 24 ] = {
   { (float *) sawc3,  sawc3_len,  0 },
   { (float *) sawcs3, sawcs3_len, 1 },
   { (float *) sawd3,  sawd3_len,  2 },
@@ -25,29 +25,16 @@ static struct PolivoksSawContainer sawsamples[ 36 ] = {
   { (float *) sawgs4, sawgs4_len, 20 },
   { (float *) sawa4,  sawa4_len,  21 },
   { (float *) sawas4, sawas4_len, 22 },
-  { (float *) sawb4,  sawb4_len,  23 },
-  { (float *) sawc5,  sawc5_len,  24 },
-  { (float *) sawcs5, sawcs5_len, 25 },
-  { (float *) sawd5,  sawd5_len,  26 },
-  { (float *) sawds5, sawds5_len, 27 },
-  { (float *) sawe5,  sawe5_len,  28 },
-  { (float *) sawf5,  sawf5_len,  29 },
-  { (float *) sawfs5, sawfs5_len, 30 },
-  { (float *) sawg5,  sawg5_len,  31 },
-  { (float *) sawgs5, sawgs5_len, 32 },
-  { (float *) sawa5,  sawa5_len,  33 },
-  { (float *) sawas5, sawas5_len, 34 },
-  { (float *) sawb5,  sawb5_len,  35 }
+  { (float *) sawb4,  sawb4_len,  23 }
 };
 
-static float sawnotes[36] = {
+static float sawnotes[24] = {
   -2, -1.92, -1.83, -1.75, -1.67, -1.58, -1.5, -1.42, -1.33, -1.25, -1.17, -1.08,
-  -1, -0.92, -0.83, -0.75, -0.67, -0.58, -0.5, -0.42, -0.33, -0.25, -0.17, -0.08,
-  0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.5, 0.58, 0.67, 0.75, 0.83, 0.92
+  -1, -0.92, -0.83, -0.75, -0.67, -0.58, -0.5, -0.42, -0.33, -0.25, -0.17, -0.08
 };
 
 static struct PolivoksSawContainer *sawGetNote(float current) {
-  for (int i = 0; i < 36; i++) {
+  for (int i = 0; i < 24; i++) {
     if ((sawnotes[i] - 0.02) <= current && (sawnotes[i] + 0.02) >= current) {
       return &sawsamples[i];
     }

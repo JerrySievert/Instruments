@@ -13,4 +13,5 @@ void init(rack::Plugin *p) {
 
   p->addModel(modelPolivoksLead);
   p->addModel(modelPolivoksSaw);
+  p->addModel(modelPolivoksSquare);
 }
